@@ -1,0 +1,22 @@
+{
+  "name": "misfit-project",
+  "version": "1.0.0",
+  "description": "Misfit Project by Tolgahan Tolu",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./app.js"
+  },
+  "keywords": [
+    "node",
+    "gym"
+  ],
+  "author": "Tolgahan Tolu",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "nodemon": "^3.0.1"
+  }
+}
