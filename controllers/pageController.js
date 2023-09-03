@@ -39,3 +39,15 @@ exports.getContactPage = async (req, res) => {
     page_name: "contact",
   });
 };
+
+exports.getLoginPage = async (req, res) => {
+  res.status(200).render("login", {
+    page_name: "login",
+  });
+};
+
+exports.getRegisterPage = async (req, res) => {
+  res.status(200).render("register", {
+    page_name: "register",
+  });
+};

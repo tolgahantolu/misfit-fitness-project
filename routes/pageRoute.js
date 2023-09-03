@@ -10,5 +10,7 @@ router.route("/news").get(pageController.getNewsPage);
 router.route("/trainer").get(pageController.getTrainerPage);
 router.route("/gallery").get(pageController.getGalleryPage);
 router.route("/contact").get(pageController.getContactPage);
+router.route("/login").get(pageController.getLoginPage);
+router.route("/register").get(pageController.getRegisterPage);
 
 module.exports = router;
