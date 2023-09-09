@@ -17,5 +17,6 @@ router
   );
 
 router.route("/login").post(authController.loginUser);
+router.route("/dashboard").get(authController.getDashboardPage);
 
 module.exports = router;

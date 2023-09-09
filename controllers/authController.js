@@ -36,10 +36,7 @@ exports.loginUser = async (req, res) => {
       const comparePassw = bcrypt.compare(password, user.password);
 
       if (comparePassw) {
-        res.status(201).json({
-          status: "success",
-          user,
-        });
+        res.status(200).redirect("/users/dashboard");
       } else {
         res.status(400).json({
           status: "fail",
@@ -58,4 +55,10 @@ exports.loginUser = async (req, res) => {
       error: error.message,
     });
   }
+};
+
+exports.getDashboardPage = async (req, res) => {
+  res.status(200).render("dashboard", {
+    page_name: "dashboard",
+  });
 };
