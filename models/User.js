@@ -9,7 +9,12 @@ const UserSchema = new Schema({
     enum: ["member", "trainer", "admin"],
     default: "member",
   },
-  workouts: [],
+  workouts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Workout",
+    },
+  ],
 });
 
 const User = model("User", UserSchema);
