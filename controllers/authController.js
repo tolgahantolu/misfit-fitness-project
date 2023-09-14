@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const { validationResult } = require("express-validator");
 const User = require("../models/User");
+const Workout = require("../models/Workout");
 
 exports.createUser = async (req, res) => {
   try {
@@ -60,9 +61,14 @@ exports.loginUser = async (req, res) => {
 };
 
 exports.getDashboardPage = async (req, res) => {
-  const user = await User.findOne({ _id: req.session.userID });
+  const user = await User.findOne({ _id: req.session.userID }).populate(
+    "workouts"
+  );
+  const workouts = await Workout.find({ user: req.session.userID });
+
   res.status(200).render("dashboard", {
     user,
+    workouts,
     page_name: "dashboard",
   });
 };
