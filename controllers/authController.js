@@ -60,6 +60,12 @@ exports.loginUser = async (req, res) => {
   }
 };
 
+exports.logoutUser = async (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
+};
+
 exports.getDashboardPage = async (req, res) => {
   const user = await User.findOne({ _id: req.session.userID }).populate(
     "workouts"
